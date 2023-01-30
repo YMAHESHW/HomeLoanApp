@@ -1,0 +1,208 @@
+1) User
+POST mapping to add new user as admin to the LOAN_USER table in the Database
+{
+  "adminContact": "9900123123",
+  "adminName": "CapgeminiBLR",
+  "password": "Capgemini123",
+  "role": "Admin",
+  "userId": 0
+}
+
+POST mapping to add new user as financeofficer to the LOAN_USER table in the Database
+{
+  "userId": 2,
+  "password": "Ramarao123",
+  "role": "financeofficer",
+  "finOfficerName": "HSRamarao",
+  "finOfficerContact": "9900123456"
+}
+
+POST mapping to add new user as landofficer to the LOAN_USER table in the Database
+{
+  "officerContact": "8800123123",
+  "officerName": "SureshMetri",
+  "password": "SureshMetri123",
+  "role": "landofficer",
+  "userId": 0
+}
+
+POST mapping to add new user to the LOAN_USER table in the Database
+{
+  "officerContact": "8800123123",
+  "officerName": "SureshMetri",
+  "password": "SureshMetri123",
+  "role": "landofficer",
+  "userId": 3
+}
+
+
+2) Customer 
+
+POST mapping to add new customers to the LOAN_USER table in the Database
+{
+  "aadharNumber": "111111111111",
+  "customerName": "Akash",
+  "dateOfBirth": "1996-03-23",
+  "emailId": "Akash@gmail.com",
+  "gender": "Male",
+  "mobileNumber": "9900123123",
+  "nationality": "India",
+  "panNumber": "1231231230",
+  "password": "Akash123",
+  "role": "Customer",
+  "userId": 0
+}
+
+
+PUT mapping to update customer details by customer ID
+{
+  "userId": 4,
+  "password": "Akash123",
+  "role": "Customer",
+  "customerName": "Akash",
+  "mobileNumber": "9900123120",
+  "emailId": "Akash@gmail.com",
+  "dateOfBirth": "1996-03-23",
+  "gender": "Male",
+  "nationality": "India",
+  "aadharNumber": "101010101010",
+  "panNumber": "1231231230"
+}
+
+
+POST mapping to add new loan applications to the LOAN_APPLICATION table in the Database
+
+{
+  "adminApproval": true,
+  "applicationDate": "2023-01-29",
+  "applicationId": 1,
+  "customer": {
+    "userId": 5,
+  "password": "Akash123",
+  "role": "Customer",
+  "customerName": "Akash",
+  "mobileNumber": "9900123120",
+  "emailId": "Akash@gmail.com",
+  "dateOfBirth": "1996-03-23",
+  "gender": "Male",
+  "nationality": "India",
+  "aadharNumber": "101010101010",
+  "panNumber": "1231231230"
+  },
+  "financeVerificationApproval": true,
+  "landVerificationApproval": true,
+  "loanAppliedAmount": 1000000,
+  "loanApprovedAmount": 50000,
+  "status": "PENDING"
+}
+
+PUT mapping to update the loan application in the LOAN_APPLICATION table in the Database
+{
+  "applicationId": 6,
+  "applicationDate": "2023-01-29",
+  "customer": {
+    "userId": 5,
+    "password": "Akash123",
+    "role": "Customer",
+    "customerName": "Akash",
+    "mobileNumber": "9900123120",
+    "emailId": "Akash@gmail.com",
+    "dateOfBirth": "1996-03-23",
+    "gender": "Male",
+    "nationality": "India",
+    "aadharNumber": "101010101010",
+    "panNumber": "1231231230"
+  },
+  "loanAppliedAmount": 1000000,
+  "loanApprovedAmount": 50000,
+  "landVerificationApproval": false,
+  "financeVerificationApproval": true,
+  "adminApproval": true,
+  "status": "PENDING"
+}
+
+
+PUT mapping for the Finance Verification to update the status of application
+
+{
+  "adminApproval": true,
+  "applicationDate": "2023-01-29",
+  "applicationId": 6,
+  "customer": {
+    "userId": 5,
+  "password": "Akash123",
+  "role": "Customer",
+  "customerName": "Akash",
+  "mobileNumber": "9900123120",
+  "emailId": "Akash@gmail.com",
+  "dateOfBirth": "1996-03-23",
+  "gender": "Male",
+  "nationality": "India",
+  "aadharNumber": "101010101010",
+  "panNumber": "1231231230"
+  },
+  "financeVerificationApproval": true,
+  "landVerificationApproval": true,
+  "loanAppliedAmount": 1000000,
+  "loanApprovedAmount": 50000,
+  "status": "PENDING"
+}
+
+
+PUT mapping for the Land Verification to update the status of application
+{
+  "adminApproval": true,
+  "applicationDate": "2023-01-29",
+  "applicationId": 6,
+  "customer": {
+    "userId": 5,
+  "password": "Akash123",
+  "role": "Customer",
+  "customerName": "Akash",
+  "mobileNumber": "9900123120",
+  "emailId": "Akash@gmail.com",
+  "dateOfBirth": "1996-03-23",
+  "gender": "Male",
+  "nationality": "India",
+  "aadharNumber": "101010101010",
+  "panNumber": "1231231230"
+  },
+  "financeVerificationApproval": true,
+  "landVerificationApproval": true,
+  "loanAppliedAmount": 1000000,
+  "loanApprovedAmount": 50000,
+  "status": "PENDING"
+}
+
+
+POST mapping to add new loan agreements to the LOAN_AGREEMENT table in the Database
+{
+  "allemis": [
+    {
+      "dueDate": "2023-08-23",
+      "emiAmount": 2000,
+      "emiId": 123,
+      "interestAmount": 100,
+      "loanAmount": 20000
+    }
+  ],
+  "loanAgreementId": 4,
+  "loanApplicationId": 6
+}
+
+
+PUT mapping to update the loan agreements in the LOAN_AGREEMENT table in the Database
+{
+  "loanAgreementId": 21,
+  "loanApplicationId": 6,
+  "allemis": [
+    {
+      "emiId": 123,
+      "dueDate": "2023-08-20",
+      "emiAmount": 2000,
+      "loanAmount": 200000,
+      "interestAmount": 100
+    }
+  ]
+}
+
